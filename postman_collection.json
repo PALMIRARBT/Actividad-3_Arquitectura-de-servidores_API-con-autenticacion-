@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "API CRUD Post",
+    "description": "Colección para probar el API CRUD de Post",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Crear Post",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Ejemplo de título\",\n  \"text\": \"Ejemplo de texto\",\n  \"author\": \"Autor\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Listar Posts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "posts"]
+        }
+      }
+    },
+    {
+      "name": "Detalle Post",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8000/api/posts/{{postId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "posts", "{{postId}}"]
+        }
+      }
+    },
+    {
+      "name": "Modificar Post",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Título modificado\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/posts/{{postId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "posts", "{{postId}}"]
+        }
+      }
+    },
+    {
+      "name": "Eliminar Post",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8000/api/posts/{{postId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "posts", "{{postId}}"]
+        }
+      }
+    }
+  ]
+}
